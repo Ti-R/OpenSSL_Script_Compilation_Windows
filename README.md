@@ -17,6 +17,7 @@ You can copy the following to create your own files without clonning if needed.
 
 1) Create the file: CompileOpenSSL.py
 
+~~~
     import os
     import os.path
     from subprocess import call
@@ -132,9 +133,10 @@ You can copy the following to create your own files without clonning if needed.
     ################
     
     os.remove(openssl_tar_file)
+~~~
 
 2) Create the file: CompileOpenSSL_vs.cmd
-
+~~~
     ECHO  --------------------------------------
     ECHO Require Python, 7Zip, PERL and NASM in PATH
     ECHO  --------------------------------------
@@ -212,11 +214,12 @@ You can copy the following to create your own files without clonning if needed.
     
     
     PAUSE
-
+~~~
 3) Launch compilation
 eg:
-
+~~~
     CompileOpenSSL_vs.cmd 150 x86
     CompileOpenSSL_vs.cmd 150 amd64
     
     CompileOpenSSL_vs.cmd 90 x86
+~~~
