@@ -1,7 +1,12 @@
 # OpenSSL_Script_Compilation_Windows
 OpenSSL Compilation under Windows x86/x64 Visual Studio 2005-2019
 
-Every file are furnish
+Every script to compile are furnish, you just need to download the tar file and update `CompileOpenSSL_vs.cmd` to set the filename
+
+~~~
+    SET FILENAME=openssl-1.1.1b.tar.gz
+~~~
+
 
 This is a modified python script of "The Quantum Physicist".
 https://stackoverflow.com/questions/45494630/how-to-build-openssl-on-windows-with-visual-studio-2017/
@@ -15,7 +20,7 @@ It can compile with multiple version of Visual Studio 2017/2019 included.
 
 You can copy the following to create your own files without clonning if needed.
 
-1) Create the file: CompileOpenSSL.py
+1) Create the file: `CompileOpenSSL.py`
 
 ~~~
     import os
@@ -135,7 +140,7 @@ You can copy the following to create your own files without clonning if needed.
     os.remove(openssl_tar_file)
 ~~~
 
-2) Create the file: CompileOpenSSL_vs.cmd
+2) Create the file: `CompileOpenSSL_vs.cmd`
 ~~~
     ECHO  --------------------------------------
     ECHO Require Python, 7Zip, PERL and NASM in PATH
@@ -215,7 +220,8 @@ You can copy the following to create your own files without clonning if needed.
     
     PAUSE
 ~~~
-3) Launch compilation
+
+3) Launch compilation from command line (Outside Visual Studio) eg:
 eg:
 ~~~
     CompileOpenSSL_vs.cmd 150 x86
