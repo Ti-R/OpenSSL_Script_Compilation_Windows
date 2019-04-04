@@ -1,24 +1,41 @@
 # OpenSSL_Script_Compilation_Windows
-OpenSSL Compilation under Windows x86/x64 Visual Studio 2005-2019
+OpenSSL compilation/build under Windows x86/x64 Visual Studio 2005-2019
 
-Every script to compile are furnish, you just need to download the tar file and update `CompileOpenSSL_vs.cmd` to set the filename
+Every script to build are furnish, you just need to download the tar file and update `CompileOpenSSL_vs.cmd` to set the filename
 
+eg:
 ~~~
     SET FILENAME=openssl-1.1.1b.tar.gz
 ~~~
+
+Notice:
+ - OpenSSL 1.0.x: Gerenate `libeay32.dll` and `ssleay32.dll`
+ - OpenSSL 1.1.x: Gerenate `libcrypto-1_1.dll` and `libssl-1_1.dll`
 
 
 This is a modified python script of "The Quantum Physicist".
 https://stackoverflow.com/questions/45494630/how-to-build-openssl-on-windows-with-visual-studio-2017/
 
-Contrary to original script, this one can detect version and compile OpenSSL 1.0.x or OpenSSL 1.1.x automatically.
+Contrary to original script, this one can detect version and build OpenSSL 1.0.x or OpenSSL 1.1.x automatically.
 
 A command file have been added to check current workstation software to fulfill the compilation.
 
-It can compile with multiple version of Visual Studio 2017/2019 included.
+It can build with multiple version of Visual Studio 2017/2019 included.
+
+Launch build from command line (Outside Visual Studio) eg:
+eg:
+~~~
+    REM VS2017
+    CompileOpenSSL_vs.cmd 150 x86
+    CompileOpenSSL_vs.cmd 150 amd64
+    
+    REM VS2008
+    CompileOpenSSL_vs.cmd 90 x86
+~~~
 
 
-You can copy the following to create your own files without clonning if needed.
+
+You can copy the following 2 steps to create your own files without clonning if needed.
 
 1) Create the file: `CompileOpenSSL.py`
 
@@ -40,7 +57,6 @@ You can copy the following to create your own files without clonning if needed.
     args = parser.parse_args()
     
     compile_flags = "-no-asm"
-    #compile_flags = "-no-asm -no-shared"
     
     openssl_32_flag = "VC-WIN32"
     openssl_64_flag = "VC-WIN64A"
@@ -219,13 +235,4 @@ You can copy the following to create your own files without clonning if needed.
     
     
     PAUSE
-~~~
-
-3) Launch compilation from command line (Outside Visual Studio) eg:
-eg:
-~~~
-    CompileOpenSSL_vs.cmd 150 x86
-    CompileOpenSSL_vs.cmd 150 amd64
-    
-    CompileOpenSSL_vs.cmd 90 x86
 ~~~
