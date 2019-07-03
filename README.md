@@ -1,7 +1,7 @@
 # OpenSSL_Script_Compilation_Windows
 OpenSSL compilation/build under Windows x86/x64 Visual Studio 2005-2019
 
-Every script to build are furnish, you just need to download the tar file and update `CompileOpenSSL_vs.cmd` to set the filename
+Every script to build are furnish, you just need to download the openssl source tar file and update `CompileOpenSSL_vs.cmd` to set the filename
 
 eg:
 ~~~
